@@ -241,7 +241,7 @@ if(isset($_SESSION['id_commande'])){
                             <thead>
                                 <tr>
                                     <th>Designation</th>
-                                    <th>Qte</th>
+                                    <th>Quantite</th>
                                     <th>Prix unitaire</th>
                                     <th>Prix de la ligne</th>
                                     <th>Supprimer</th>

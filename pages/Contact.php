@@ -55,7 +55,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
   				<h1 class="page-header text-center">Contactez nous !</h1>
                                 <form class="form-horizontal" role="form" method="post">
 					<div class="form-group">
-						<label for="name" class="col-sm-2 control-label">nom</label>
+						<label for="name" class="col-sm-2 control-label">Nom</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="name" name="name" placeholder="Nom et prénom" value="">
                                                         
@@ -63,7 +63,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="email" class="col-sm-2 control-label">email</label>
+						<label for="email" class="col-sm-2 control-label">Email</label>
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="email" name="email" placeholder="azerty@hotmail.com">
 							<?php echo "<p class='text-danger'>$errEmail</p>";?>
@@ -72,14 +72,14 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 					<div class="form-group">
 						<label for="message" class="col-sm-2 control-label">Message</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" rows="4" name="message"></textarea>
+                                                    <textarea class="form-control" rows="4" name="message" placeholder="Votre message "></textarea>
 							<?php echo "<p class='text-danger'>$errMessage</p>";?>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="human" name="human" placeholder="votre question">
+							<input type="text" class="form-control" id="human" name="human" placeholder="Réponse ">
 							<?php echo "<p class='text-danger'>$errHuman</p>";?>
 						</div>
 					</div>
