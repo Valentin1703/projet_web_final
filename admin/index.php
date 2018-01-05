@@ -4,6 +4,9 @@ include('lib/php/admin_list_include.php');
 
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 
+
+
+
 ?>
 <html>
     <head>
