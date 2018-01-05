@@ -13,7 +13,6 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="lib/css/styles.css"/>
         <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-4.0.0-beta/"/>
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Crete+Round' >
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

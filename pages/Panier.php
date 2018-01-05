@@ -3,7 +3,6 @@ if (isset($_GET['commander'])) {
 
     extract($_GET,EXTR_OVERWRITE);
     
-
         $commande = new PanierDB($cnx);
         $p = $_GET['prix'];
         $qte = $_GET['qte'];
@@ -18,12 +17,6 @@ if (isset($_GET['commander'])) {
      
         ($commande->addPanier($_GET)); 
 
-        
-        
-        
-        
-        
-        
         
 }
 
@@ -243,34 +236,35 @@ if(isset($_SESSION['id_commande'])){
             
             
             <article class="well form-inline pull-left col-lg-12">
-                <legend>Contenu du panier</legend>
-                <table id="tableau" class="table">
-                    <thead>
-                        <tr>
-                            <th>Designation</th>
-                            <th>Qte</th>
-                            <th>Prix unitaire</th>
-                            <th>Prix de la ligne</th>
-                            <th>Supprimer</th>
-                            
-                        </tr>
-                    </thead>
-                </table>
-                <br><label>Prix du panier total</label> : <label id = "prixTotal"></label>
-                <label id = "nbreLignes" hidden>0</label></br>
-                    <input type="submit" class="btn btn-primary" name="commander" id="commander" value="Commander" class="pull-right"/>&nbsp;   
-            </article>
-        </section>
+                        <legend>Contenu du panier</legend>
+                        <table id="tableau" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Designation</th>
+                                    <th>Qte</th>
+                                    <th>Prix unitaire</th>
+                                    <th>Prix de la ligne</th>
+                                    <th>Supprimer</th>
 
-        </form>
-    
-    <?php 
-    }
-    ?>
+                                </tr>
+                            </thead>
+                        </table>
+                        
+                        <br><label>Prix du panier total</label> : <label id = "prixTotal"></label>
+                        <label id = "nbreLignes" hidden>0</label></br>
+                        <input type="submit" class="btn btn-primary" name="commander" id="commander" value="Commander" class="pull-right"/>&nbsp;   
+                        
+                    </article>
+                </section>
 
-    <?php
+              </form>
 
-    }
+              <?php
+          }
+          ?>
+
+          <?php
+      }
     else
     {
         ?> <p>Vous devez etre authentifié pour pouvoir commander <a href="index.php?page=inscription_connexion" >cliquez ici</a> </p> <?php
