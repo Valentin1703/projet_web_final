@@ -1,0 +1,611 @@
+/* GENERAL */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body 
+{
+    font-family: Arial,sans-serif;
+    font-size: 15px;
+    height:100%;
+}
+h1, h2,h3,h4
+{
+  color: #444;  
+}
+h1
+{
+    font-family: 'Crete Round', serif;
+    font-size: 45px;
+}
+h2
+{
+    font-size: 55px;
+}
+h3
+{
+    font-size: 30px;
+}
+h4
+{
+    font-size: 24px;
+}
+p
+{
+    line-height: 20px;
+    color: #777;
+}
+ul
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+    color: #444;
+}
+
+.wrapper
+{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    
+}
+.orange
+{
+    color: #ff7a00;
+}
+.clear
+{
+    clear: both;   
+}
+small
+{
+    font-size: 13px;
+    font-style:italic;
+}
+
+.vert
+{
+    color: green;
+    text-decoration: none;
+}
+.txtRouge
+{
+    color:red;
+}
+
+/* HEADER */
+
+header 
+{
+    height: 120px;   
+}
+header h1
+{
+    float: left;
+    margin-top: 30px;
+    margin-left: -200px;
+}
+header nav
+{
+    float: right;   
+    margin-top: 50px;
+}
+header nav ul li
+{
+    float:left;
+    display: inline-block;
+}
+header nav ul li a
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* MAIN IMAGE */
+
+#main-image
+{
+   
+    height: 580px;
+    background: url(../../images/main2.jpg) center no-repeat;
+}
+#main-image h2
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 150px 0 40px 0;
+    margin-bottom: 20px;
+}
+.button-1
+{
+    display: block;
+    width: 120px;
+    height: 50px;
+    background: #ff7a00;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-align: center;
+    border-radius:  3px;
+}
+.button-1:hover
+{
+     background: #02b8dd;
+}
+
+/* STEPS */
+
+#steps ul
+{
+    margin: 80px 0;
+}
+#steps ul li
+{
+    width: 400px;
+    float:left;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+    
+}
+#steps h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+#steps p
+{
+    margin-bottom: 20px;
+}
+#step-1
+{
+    background: url(../..//images/steps-icon-1.png)no-repeat top center;
+    
+}
+#step-2
+{
+    
+    background: url(../..//images/steps-icon-2.png)no-repeat top center;
+    
+}
+
+.tb
+{
+    margin: auto;
+    text-align: center;
+}
+
+/* POSSIBILITIES */
+
+
+#possibilities
+{
+    background-color: #efefef;
+    padding:  60px 0;
+}
+#possibilities article
+{
+    width: 460px;
+    height: 270px;
+    float: left;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+}
+#possibilities article:first-child
+{
+    margin-right: 20px;
+}
+.overlay
+{
+    background: rgba(255,255,255, 0.95);
+    height: 100%;
+    width: 190px;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+article h4
+{
+    border-bottom:  1px solid #ddd;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#possibilities p
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.button-2
+{
+    color: #fff;
+    background-color: #ff7a00;
+    padding: 6px 20px;
+    border-radius: 3px;
+}
+.button-2:hover
+{
+    color: #fff;
+    background-color: #02b8dd;
+}
+
+
+
+/* CONTACT */
+
+
+
+#contact_accueil
+{
+   
+    background:#333333;
+    color:#f4f4f4;
+    padding-bottom:80px;
+    padding: 60px 0;
+    text-align: center
+}
+#contact_accueil h3
+{
+    width: 400px;
+    text-transform: uppercase;
+    margin: 0 auto 20px auto;
+    border-bottom:  1px solid #02b8dd;
+    padding-bottom: 20px;   
+}
+
+
+.button-3
+{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px;
+    background-color: #02b8dd;
+    border-style: none;
+    border-radius: 3px;
+}
+.button-3:hover
+{
+    color: #fff;
+    background-color: #444;
+}
+
+/* FOOTER */
+
+footer
+{
+    height: 260px;
+    background-color: #444;
+   
+    bottom:0px;
+}
+footer h1
+{
+    color:#fff;
+    text-align: center;
+    padding-top: 80px;
+}
+.copyright
+{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    color: #777;
+}
+
+
+/* la neige du footer  */
+
+.snow {
+  height: 260px;
+  overflow: hidden;
+}
+
+.snow__layer {
+  
+  left: -100px;
+  right: -100px;
+  -webkit-animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+          animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  -webkit-transform: translateX(-50px);
+      -ms-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.snow__fall {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2000px;
+  background: url(../../..//admin/images/snow-light.png);
+  -webkit-animation: fall 10s linear infinite;
+          animation: fall 10s linear infinite;
+}
+
+.snow__layer:nth-child(1) {
+  -webkit-animation-duration: 35s;
+          animation-duration: 35s;
+}
+
+.snow__layer:nth-child(1) .snow__fall {
+  background: url(../..//images/snow-blur.png);
+  -webkit-transform: translateZ(25px);
+          transform: translateZ(25px);
+  -webkit-animation-name: fallblur;
+          animation-name: fallblur;
+  width: 4000px;
+  left: -2000px;
+}
+
+.snow__layer:nth-child(2) {
+  -webkit-animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+          animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.snow__layer:nth-child(2) .snow__fall {
+  background:  url(../..//images/snow-medium.png);
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
+}
+
+.snow__fall:nth-child(3) {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  background-size: 250px;
+}
+
+.snow__fall:nth-child(2) {
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  background-size: 500px;
+}
+
+.snow__layer:nth-child(4) .snow__fall {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
+  -webkit-animation-name: falllight;
+          animation-name: falllight;
+}
+
+@-webkit-keyframes fall {
+  from {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+}
+
+
+
+@keyframes fall {
+  from {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+}
+
+@-webkit-keyframes falllight {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(50px);
+            transform: translateY(-1000px) translateZ(50px);
+  }
+}
+
+@keyframes falllight {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(50px);
+            transform: translateY(-1000px) translateZ(50px);
+  }
+}
+
+@-webkit-keyframes fallblur {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(25px);
+            transform: translateY(-1000px) translateZ(25px);
+  }
+}
+
+@keyframes fallblur {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(25px);
+            transform: translateY(-1000px) translateZ(25px);
+  }
+}
+
+@-webkit-keyframes wind {
+  to {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+@keyframes wind {
+  to {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+
+/*  Commande*/
+
+
+/*
+/* menu en test pour le moment **/
+
+/* Add a black background color to the top navigation */
+/*
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */ /*
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover *//*
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add an active class to highlight the current page *//*
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens *//*
+.topnav .icon {
+    display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) *//*
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) 
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+} */
+
+
+
+/* INSCRIPTION */ /* *//* INSCRIPTION */ /* *//* INSCRIPTION */ /* *//* INSCRIPTION */ /* */
+
+
+.panel-login {
+	border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+}
+.panel-login>.panel-heading a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+	color: #029f5b;
+	font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 45px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+
+.btn-register {
+	background-color: #1CB94E;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
+
