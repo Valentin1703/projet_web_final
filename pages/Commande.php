@@ -102,7 +102,7 @@ if(isset($_SESSION['id_commande'])){
             <table class=" tb table">
             <tr>
                      <td>
-                         <button type="button" class="btn btn-success"><a href="index.php?page=Panier&id=<?php print $liste[0]['id_ordinateur']; ?>"> Ajouter au panier</button>
+                         <button type="button" class="btn btn-success"><a href="index.php?page=Panier&id=<?php print $liste[0]['id_ordinateur']; ?>"> Commander</button>
                      </td>
 
                      

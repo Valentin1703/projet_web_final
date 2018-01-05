@@ -57,7 +57,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 					<div class="form-group">
 						<label for="name" class="col-sm-2 control-label">nom</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+							<input type="text" class="form-control" id="name" name="name" placeholder="Nom et prénom" value="">
                                                         
 							<?php echo "<p class='text-danger'>$errName</p>";?>
 						</div>
@@ -65,7 +65,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 					<div class="form-group">
 						<label for="email" class="col-sm-2 control-label">email</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com">
+							<input type="email" class="form-control" id="email" name="email" placeholder="azerty@hotmail.com">
 							<?php echo "<p class='text-danger'>$errEmail</p>";?>
 						</div>
 					</div>
@@ -79,7 +79,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 					<div class="form-group">
 						<label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+							<input type="text" class="form-control" id="human" name="human" placeholder="votre question">
 							<?php echo "<p class='text-danger'>$errHuman</p>";?>
 						</div>
 					</div>

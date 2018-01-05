@@ -83,7 +83,7 @@ if (isset($_GET['choix_type'])) {
 			<?php print utf8_decode($liste[$i]['marque']);?>
 	</td>
         <td>
-			<a class="vert" href="index.php?page=commande&id=<?php print $liste[$i]['id_ordinateur']; ?>"> Commander</a>
+			<a class="vert" href="index.php?page=commande&id=<?php print $liste[$i]['id_ordinateur']; ?>">  fiche technique</a>
 	</td>
       </tr>
     </tbody>
