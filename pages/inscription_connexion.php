@@ -95,7 +95,7 @@ if(isset($_POST['connexion'])){
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-sm-3"><label for="Password">Password</label></div>
+                                                <div class="col-sm-3"><label for="Password">Mot de passe</label></div>
                                                 <div class="col-sm-4">
                                                     <input type="password" name="mdp" id="password1" />
                                                 </div>
@@ -137,7 +137,7 @@ if(isset($_POST['connexion'])){
                                             </div>
                                         </div> 
                                         <div class="row">
-                                            <div class="col-sm-3"><label for="mdp">Password</label></div>
+                                            <div class="col-sm-3"><label for="mdp">Mot de passe</label></div>
                                             <div class="col-sm-4">
                                                 <input type="mdp" name="mdp" id="password" />
                                             </div>
