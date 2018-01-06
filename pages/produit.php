@@ -64,9 +64,9 @@ if (isset($_GET['choix_type'])) {
     <thead class="thead-dark">
       <tr>
 
-        <th>image</th>
-        <th>designation</th>
-        <th>marque</th>
+        <th>Image</th>
+        <th>Designation</th>
+        <th>Marque</th>
         <th>Commander</th>
       </tr>
     </thead>

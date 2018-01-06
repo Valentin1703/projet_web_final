@@ -52,7 +52,7 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
   	<div class="container">
   		<div class="row">
   			<div class="col-md-6 col-md-offset-3">
-  				<h1 class="page-header text-center">Contactez nous !</h1>
+  				<h1 class="page-header text-center">Contactez-nous !</h1>
                                 <form class="form-horizontal" role="form" method="post">
 					<div class="form-group">
 						<label for="name" class="col-sm-2 control-label">Nom</label>
