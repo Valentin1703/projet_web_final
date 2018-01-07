@@ -250,7 +250,7 @@ if(isset($_SESSION['id_commande'])){
                             </thead>
                         </table>
                         
-                        <br><label>Prix du panier total</label> : <label id = "prixTotal"></label>
+                        <br><label>Prix du panier total</label> : <label id = "prixTotal"> </label><span> euros</span>
                         <label id = "nbreLignes" hidden>0</label></br>
                         <input type="submit" class="btn btn-primary" name="commander" id="commander" value="Commander" class="pull-right"/>&nbsp;   
                         
@@ -267,7 +267,7 @@ if(isset($_SESSION['id_commande'])){
       }
     else
     {
-        ?> <p>Vous devez etre authentifié pour pouvoir commander <a href="index.php?page=inscription_connexion" >cliquez ici</a> </p> <?php
+        ?> <p>Vous devez être authentifié pour pouvoir commander <a href="index.php?page=inscription_connexion" >cliquez ici</a> </p> <?php
         
     }
     
