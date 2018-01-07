@@ -105,8 +105,8 @@ if(isset($_POST['connexion'])){
                                             <div class="control-group">
                                                 <!-- Button -->
                                                 <div class="controls">
-                                                     <input type="submit" class="btn btn-primary" name="connexion" id="connexion" value="connection" class="pull-right"/>&nbsp;  
-                                                     <input type="submit" class="btn btn-primary" name="admin" id="admin" value="admin" class="pull-right"/>&nbsp; 
+                                                     <input type="submit" class="btn btn-primary" name="connexion" id="connexion" value="Connection" class="pull-right"/>&nbsp;  
+                                                     <input type="submit" class="btn btn-primary" name="admin" id="admin" value="Admin" class="pull-right"/>&nbsp; 
                                                      <input type="reset"  class="btn btn-success" id="reset" value="Annuler" class="pull-left"/>
                                                 </div>
                                                
