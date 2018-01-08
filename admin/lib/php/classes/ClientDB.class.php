@@ -54,8 +54,8 @@ class ClientDB extends Client{
             
             //return $retour;
         }catch(PDOException $e){
-            print "<br/>Echec de l'insertion";
-            print $e->getMessage();
+              $result='<div class="alert alert-danger">Impossible de crée votre compte, votre email existe déjà !</div>';
+              print $result;
         }        
     }
     

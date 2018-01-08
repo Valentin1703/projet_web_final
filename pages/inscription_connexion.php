@@ -24,11 +24,12 @@ if(isset($_POST['connexion'])){
     $client=$log->isConnected($_POST['email'],$_POST['mdp']);
 
     if(is_null($client)){
-        $message="<br/> données incorrectes";
+      $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
     }
     else{
         $_SESSION['client']=2;
-        $message="Authentifié!";
+  
+        $result='<div class="alert alert-success">Vous êtes authentifié</div>';
         ?>
 <meta http-equiv="refresh": content="1;url=index.php?page=accueil">
         <?php
@@ -41,11 +42,11 @@ if(isset($_POST['connexion'])){
     $log=new AdminDB($cnx);
     $admin=$log->isAdmin($_POST['email'],$_POST['mdp']);
     if(is_null($admin)){
-        $message="<br/> données incorrectes";
+         $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
     }
     else{
         $_SESSION['admin']=1;
-        $message="Authentifié!";
+        $result='<div class="alert alert-success">Vous êtes authentifié</div>';
      
         ?>
 <meta http-equiv="refresh": content="0;url=http://localhost/Mes%20sites/projet_web_2/admin/index.php?page=accueil_admin">
@@ -81,7 +82,7 @@ if(isset($_POST['connexion'])){
                         <div id="myTabContent" class="tab-content">
 
                             <div class="tab-pane active in" id="login">
-                                <section id="message"><?php if (isset($message)) print $message; ?></section>
+                                <section id="message"><?php if (isset($result)) print $result; ?></section>
                                 <form class="form-horizontal" action="<?php print $_SERVER['PHP_SELF']; ?>" method="post" id="form_commande">
                                     <fieldset>
                                         <div id="legend">

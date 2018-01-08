@@ -1,49 +1,81 @@
 <?php
-if (isset($_GET['commander'])) {
-
-    extract($_GET,EXTR_OVERWRITE);
-    
-        $commande = new PanierDB($cnx);
-        $p = $_GET['prix'];
-        $qte = $_GET['qte'];
-        $id_pc = $_GET['id_pc'];
-        $prix = $p * $qte;
-     
-       
-        $array = array("id_pc" =>$id_pc,
-                       "qte"=> $qte,
-                        "prix"=>$prix);
-        $_GET=$array;
-     
-        ($commande->addPanier($_GET)); 
-
-        
-}
-
 if(isset($_SESSION['client']))
-    {
+{
 
 //si aucun id de gâteau dans l'url
-if (!isset($_GET['id']) && !isset($_SESSION['id_commande'])) {
+if (!isset($_GET['id']) && !isset($_SESSION['id_commande']))
+{
     ?>
     <p class="txtRouge">Pour commander, choisissez 
         <a href="index.php?page=produit">ici</a> 
         votre ordinateur</p>
     <?php
 }
-else if(isset($_GET['id'])){ //on vient de la page produit
+else if(isset($_GET['id']))
+{ //on vient de la page produit
     $_SESSION['id_commande'] = $_GET['id'];
 }
-if(isset($_SESSION['id_commande'])){
+
+if(isset($_SESSION['id_commande']))
+{
     $ordi = new Vue_ordinateurDB($cnx);
     $liste = $ordi->getVue_ordinateurProduit($_SESSION['id_commande']);
     //var_dump($liste);
+
+  
+if(isset($_GET['commander']))
+{
+            $p = $_GET['prix'];
+            $prix2 = $liste[0]['prix_unitaire'];
+            
+          /*  var_dump($p);
+            var_dump($prix2);   */
+            
+            if($p==$prix2)
+            {
+                 $result='<div class="alert alert-danger">pas ok</div>';
+                 if (isset($_GET['commander']))
+                 {
+
+                        extract($_GET, EXTR_OVERWRITE);
+
+                        $commande = new PanierDB($cnx);
+                        $p = $_GET['prix'];
+                        $qte = $_GET['qte'];
+                        $id_pc = $_GET['id_pc'];
+                        $prix = $p * $qte;
+                        $prix2 = '';
+                        $p = '';
+                        $array = array("id_pc" => $id_pc,
+                            "qte" => $qte,
+                            "prix" => $prix);
+                        $_GET = $array;
+
+                        ($commande->addPanier($_GET));
+                }
+            }
+            else
+            {
+                 $result='<div class="alert alert-danger">Vous avez modifiez le prix ! Votre commande n est pas prix en compte! </div>';
+                 print $result;
+            }
+}
+    
+
 ?>
  
-
-
         <script type="text/javascript" src="panier.js"></script>
         <script type="text/javascript">
+            
+                     
+
+            
+            
+            
+            
+            
+            
+            
             function ajouter()
             {
                 var code = String(document.getElementById("id").value);
@@ -201,15 +233,17 @@ if(isset($_SESSION['id_commande'])){
                 <br><br>
                 
                 <label class="col-lg-3">Designation</label>
-                <input  id = "id" style="width:120px;" class="input-sm
+                <input disabled  id = "id" style="width:120px;" class="input-sm 
                         form-control" 
                         value="<?php print utf8_decode($liste[0]['designation']); ?>">
                 </input>
                 
+  
+                
                 <br><br>
                 
                 <label class="col-lg-3" >Quantité</label>
-                <input type = "number" id = "qte" name="qte"
+                <input type = "number" id = "qte" name="qte" value="0"
                        style="width:120px" 
                 class="input-sm form-control">
                            
@@ -219,7 +253,7 @@ if(isset($_SESSION['id_commande'])){
                 
                 
                 <label class="col-lg-3">Prix</label>
-                <input type = "number" id = "prix" name="prix" style="width:120px" 
+                <input   id = "prix" name="prix" style="width:120px" 
                        class="input-sm form-control" 
                        value="<?php print utf8_decode($liste[0]['prix_unitaire']);?>"> euros
                 </input>
@@ -227,12 +261,12 @@ if(isset($_SESSION['id_commande'])){
                 <br><br>
                 
                 
-                <button class="btn btn-primary" type="button" onclick="ajouter()"><span class="glyphicon glyphicon-shopping-cart"></span> Ajouter au panier</button>
+                <button  class="btn btn-primary" type="button" onclick="ajouter()"><span class="glyphicon glyphicon-shopping-cart"></span> Ajouter au panier</button>
             
             </article>
       
-            
-            
+      
+
             
             
             <article class="well form-inline pull-left col-lg-12">
@@ -249,6 +283,10 @@ if(isset($_SESSION['id_commande'])){
                                 </tr>
                             </thead>
                         </table>
+                        
+                        
+                        
+             
                         
                         <br><label>Prix du panier total</label> : <label id = "prixTotal"> </label><span> euros</span>
                         <label id = "nbreLignes" hidden>0</label></br>
