@@ -2,6 +2,7 @@
 if(isset($_SESSION['client']))
 {
 
+    
 //si aucun id de gâteau dans l'url
 if (!isset($_GET['id']) && !isset($_SESSION['id_commande']))
 {
@@ -43,10 +44,12 @@ if(isset($_GET['commander']))
                         $p = $_GET['prix'];
                         $qte = $_GET['qte'];
                         $id_pc = $_GET['id_pc'];
+                        $id_client =$_SESSION['client'];  
                         $prix = $p * $qte;
                         $prix2 = '';
                         $p = '';
                         $array = array("id_pc" => $id_pc,
+                            "id_client" =>$id_client,
                             "qte" => $qte,
                             "prix" => $prix);
                         $_GET = $array;

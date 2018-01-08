@@ -10,12 +10,13 @@ class PanierDB extends Panier {
     }
        public function addPanier(array $data) {
 
-        $query = "insert into panier2 (id_ordinateur,quantite,prix_total)"
-                . " values (:id,:quantite,:prix_t)";
+        $query = "insert into panier2 (id_ordinateur,id_client,quantite,prix_total)"
+                . " values (:id,:id_client,:quantite,:prix_t)";
 
         try {
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':id',$data['id_pc'], PDO::PARAM_STR);
+            $resultset->bindValue(':id_client',$data['id_client'], PDO::PARAM_STR);
             $resultset->bindValue(':quantite',$data['qte'], PDO::PARAM_STR);
             $resultset->bindValue(':prix_t',$data['prix'], PDO::PARAM_STR);
 
