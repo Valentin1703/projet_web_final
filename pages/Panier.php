@@ -2,8 +2,8 @@
 if(isset($_SESSION['client']))
 {
 
+//si aucun id d'ordinateur dans l'url
     
-//si aucun id de gâteau dans l'url
 if (!isset($_GET['id']) && !isset($_SESSION['id_commande']))
 {
     ?>
@@ -13,7 +13,7 @@ if (!isset($_GET['id']) && !isset($_SESSION['id_commande']))
     <?php
 }
 else if(isset($_GET['id']))
-{ //on vient de la page produit
+{ 
     $_SESSION['id_commande'] = $_GET['id'];
 }
 
@@ -29,25 +29,31 @@ if(isset($_GET['commander']))
             $p = $_GET['prix'];
             $prix2 = $liste[0]['prix_unitaire'];
             
-          /*  var_dump($p);
-            var_dump($prix2);   */
+            
             
             if($p==$prix2)
             {
                  $result='<div class="alert alert-danger">pas ok</div>';
-                 if (isset($_GET['commander']))
+                 if (isset($_GET['qte'])>0)
                  {
 
                         extract($_GET, EXTR_OVERWRITE);
 
+                        
                         $commande = new PanierDB($cnx);
+                        
                         $p = $_GET['prix'];
                         $qte = $_GET['qte'];
                         $id_pc = $_GET['id_pc'];
                         $id_client =$_SESSION['client'];  
-                        $prix = $p * $qte;
+                        $prix = $p * $qte;  // le prix de l'ordi * la quantitée indiquée dans l'input
+                        
+                        // les 2 variable si dessous permette de vérifier si l'on a pas modifier le prix de l'ordinateur
+                        // si le prix est différent alors impossible de commander.
+                        
                         $prix2 = '';
                         $p = '';
+                        
                         $array = array("id_pc" => $id_pc,
                             "id_client" =>$id_client,
                             "qte" => $qte,
@@ -55,6 +61,11 @@ if(isset($_GET['commander']))
                         $_GET = $array;
 
                         ($commande->addPanier($_GET));
+                }
+                else
+                {
+                    $result='<div class="alert alert-danger">Vous avez une quantiée negative ! Votre commande n est pas prix en compte! </div>';
+                    print $result;
                 }
             }
             else
@@ -67,18 +78,7 @@ if(isset($_GET['commander']))
 
 ?>
  
-        <script type="text/javascript" src="panier.js"></script>
         <script type="text/javascript">
-            
-                     
-
-            
-            
-            
-            
-            
-            
-            
             function ajouter()
             {
                 var code = String(document.getElementById("id").value);

@@ -3,19 +3,20 @@
 </head>
 
 <?php
-//on a besoin des classe Type_gateauDB et Type_gateau
+
 $types = new Type_ordinateurDB($cnx);
 $tabTypes = $types->getType_ordinateur();
 $nbrTypes = count($tabTypes);
-//traitement du formulaire de choix du type
-if (isset($_GET['choix_type'])) {
+
+
+if (isset($_GET['choix_type']))
+{
     $ordi = new Vue_ordinateurDB($cnx);
-    
     $liste = $ordi->getVue_ordinateurType($_GET['id_type_ordi']);
-  
     $nbrOrdi = count($liste);
  
 }
+
 ?>
 
 <div class="container">
@@ -88,7 +89,7 @@ if (isset($_GET['choix_type'])) {
     </tbody>
   </table>
    <?php
-    } //fin for $i
+    }
    ?>
    <?php
    }

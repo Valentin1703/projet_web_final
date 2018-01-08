@@ -184,15 +184,15 @@ header nav ul li a
     text-align: center;
 }
 
-/* POSSIBILITIES */
+/* article */
 
 
-#possibilities
+#article
 {
     background-color: #efefef;
     padding:  60px 0;
 }
-#possibilities article
+#article article
 {
     width: 460px;
     height: 270px;
@@ -200,7 +200,7 @@ header nav ul li a
     border-radius: 10px;
     background-repeat: no-repeat;
 }
-#possibilities article:first-child
+#article article:first-child
 {
     margin-right: 20px;
 }
@@ -222,7 +222,7 @@ article h4
     margin-bottom: 20px;
     text-align: center;
 }
-#possibilities p
+#article p
 {
     text-align: center;
     margin-bottom: 20px;

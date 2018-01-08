@@ -5,21 +5,27 @@
 
 
 //si aucun id d'ordinateur se trouve dans l'url
-if (!isset($_GET['id']) && !isset($_SESSION['id_commande'])) {
-    ?>
-    <p class="txtRouge">Pour commander, choisissez 
-        <a href="index.php?page=produit">ici</a> 
-        votre ordinateur</p>
-    <?php
-}
-else if(isset($_GET['id'])){ //on vient de la page produit
+// alors affiche un lien qui nous redirige vers la page produit 
+
+if (!isset($_GET['id']) && !isset($_SESSION['id_commande']))
+{
+        ?>
+            <p class="txtRouge">Pour commander, choisissez 
+                <a href="index.php?page=produit">ici</a>votre ordinateu>
+            </p>
+        <?php
+        
+} 
+else if(isset($_GET['id']))
+    { //on vient de la page produit
     $_SESSION['id_commande'] = $_GET['id'];
-}
-if(isset($_SESSION['id_commande'])){
+    }
+    
+    if(isset($_SESSION['id_commande']))
+    {
     $ordi = new Vue_ordinateurDB($cnx);
     $liste = $ordi->getVue_ordinateurProduit($_SESSION['id_commande']);
-    //var_dump($liste);
-}
+    }
     
   ?>
             <table  class="tb table table-hover">
@@ -31,7 +37,8 @@ if(isset($_SESSION['id_commande'])){
                      
             </tr>
             </table>
-    <table class=" tb table table-hover">
+            
+            <table class=" tb table table-hover">
             <tr>        
                       <td>
                             Designation :

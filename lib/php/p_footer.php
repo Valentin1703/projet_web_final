@@ -1,6 +1,9 @@
 <div class="snow">
 
     <h1>Val informatique<span class="orange">.</span></h1>
+      
+    <!-------- affichage de la neige dnas le footer ------->
+    
     <div class="copyright">Copyright © 2017. Tous droits réservés.</div>
 
 

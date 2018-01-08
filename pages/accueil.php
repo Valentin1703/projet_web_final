@@ -47,7 +47,7 @@ $nbrOrdi2 = count($liste2);
             
         </section>
         
-       <section id="possibilities">
+       <section id="article">
 			<div class="wrapper">
                             
                             <article  style="background-image: url(admin/images/pc5.jpg); ">

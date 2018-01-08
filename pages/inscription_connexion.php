@@ -1,9 +1,8 @@
 <?php
 //traitement formulaire
-if (isset($_GET['save'])) {
-    //extrait les champs du tableau $_GET pour simplifier
-    //ecriture
- 
+if (isset($_GET['save'])) 
+{
+
     extract($_GET, EXTR_OVERWRITE);
     if (empty($email1) || empty($email2) || empty($mdp) || empty($nom) || empty($prenom) || empty($telephone) || empty($adresse)) 
     {
@@ -17,43 +16,47 @@ if (isset($_GET['save'])) {
         $client->addClient($_GET);
     }
 }
- /*  connexion en tant que client */
-if(isset($_POST['connexion'])){
-    
-    $log=new ClientDB($cnx);
-    $client=$log->isConnected($_POST['email'],$_POST['mdp']);
 
-    if(is_null($client)){
-      $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
-    }
-    else{
-        $_SESSION['client']=2;
-  
-        $result='<div class="alert alert-success">Vous êtes authentifié</div>';
-        ?>
-<meta http-equiv="refresh": content="1;url=index.php?page=accueil">
-        <?php
-    }
-  
-}
+        /*  connexion en tant que client */
+       if(isset($_POST['connexion']))
+       {
+
+           $log=new ClientDB($cnx);
+           $client=$log->isConnected($_POST['email'],$_POST['mdp']);
+
+           if(is_null($client)){
+             $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
+           }
+           else{
+               $_SESSION['client']=2;
+
+               $result='<div class="alert alert-success">Vous êtes authentifié</div>';
+               ?>
+       <meta http-equiv="refresh": content="1;url=index.php?page=accueil">
+               <?php
+           }
+       }
+       
+    /*  connexion en tant qu'admin */
+    if(isset($_POST['admin']))
+    {
     
-    if(isset($_POST['admin'])){
-    
-    $log=new AdminDB($cnx);
-    $admin=$log->isAdmin($_POST['email'],$_POST['mdp']);
-    if(is_null($admin)){
-         $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
-    }
-    else{
-        $_SESSION['admin']=1;
-        $result='<div class="alert alert-success">Vous êtes authentifié</div>';
-     
-        ?>
-<meta http-equiv="refresh": content="0;url=http://localhost/Mes%20sites/projet_web_2/admin/index.php?page=accueil_admin">
-        <?php
-    }
+        $log=new AdminDB($cnx);
+        $admin=$log->isAdmin($_POST['email'],$_POST['mdp']);
+        if(is_null($admin)){
+             $result='<div class="alert alert-danger">Impossible de vous connecté</div>';
+        }
+        else
+        {
+            $_SESSION['admin']=1;
+            $result='<div class="alert alert-success">Vous êtes authentifié</div>';
+
+                    ?>
+                        <meta http-equiv="refresh": content="0;url=http://localhost/Mes%20sites/projet_web_2/admin/index.php?page=accueil_admin">
+                    <?php
+        }
   
-}
+    }
     ?>
 
 
@@ -66,7 +69,7 @@ if(isset($_POST['connexion'])){
 
 
                     <h3>Se connecter</h3>
-
+                                                <!---- Partie connection ------>
                 </div>
 
                 <div class="modal-body">
@@ -104,7 +107,7 @@ if(isset($_POST['connexion'])){
 
 
                                             <div class="control-group">
-                                                <!-- Button -->
+                                             
                                                 <div class="controls">
                                                      <input type="submit" class="btn btn-primary" name="connexion" id="connexion" value="Connection" class="pull-right"/>&nbsp;  
                                                      <input type="submit" class="btn btn-primary" name="admin" id="admin" value="Admin" class="pull-right"/>&nbsp; 
@@ -118,6 +121,10 @@ if(isset($_POST['connexion'])){
                                     </fieldset>
                                 </form>   
 
+                                
+                                <!---- Partie inscription ------>
+                                
+                                
 
                             </div>
                             <div class="tab-pane fade" id="create">

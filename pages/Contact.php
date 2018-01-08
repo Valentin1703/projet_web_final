@@ -1,13 +1,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <?php
+                // Initialisation a '' sinon bug 
 		$errName='';
                 $errEmail='';
                 $errMessage='';
                 $errHuman='';
                 $result='';
                 
-	if (isset($_POST["submit"])) {
+	if (isset($_POST["submit"]))
+        {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$message = $_POST['message'];
@@ -18,33 +20,41 @@
 
 		$body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
-		// Check if name has been entered
-		if (!$_POST['name']) {
+		// verifie si le nom est rempli
+		if (!$_POST['name'])
+                {
 			$errName = 'Veuillez entrer votre nom';
 		}
 		
-		// Check if email has been entered and is valid
-		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		// verifie si l'email entré est valide
+		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+                {
 			$errEmail = 'Entrez votre adresse mail';
 		}
 		
-		//Check if message has been entered
-		if (!$_POST['message']) {
+		// verifie si le message est bien écrit
+		if (!$_POST['message'])
+                {
 			$errMessage = 'Entrez votre message';
-		}
-		//Check if simple anti-bot test is correct
-		if ($human !== 5) {
+                }
+		// verification de l'anti bot
+		if ($human !== 5) 
+                {
 			$errHuman = 'l anti spam est inccorecte';
-		}
+                }
 
-// If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-	if (mail ($to, $subject, $body, $from)) {
-		$result='<div class="alert alert-success">Votre mail a bien été envoyer</div>';
-	} else {
-		$result='<div class="alert alert-danger">Erreur, mail non envoyez.</div>';
-	}
-}
+                    // si aucune erreur alors l'email s'envoi
+                    if (!$errName && !$errEmail && !$errMessage && !$errHuman)
+                        {
+                            if (mail ($to, $subject, $body, $from))
+                            {
+                                    $result='<div class="alert alert-success">Votre mail a bien été envoyer</div>';
+                            } 
+                            else
+                            {
+                                    $result='<div class="alert alert-danger">Erreur, mail non envoyez.</div>';
+                            }
+                        }
 	}
 ?>
 

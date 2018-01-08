@@ -5,8 +5,7 @@ require"./lib/php/verifier_connexion.php";
 
         <section id="main-image">
 		<div class="wrapper">
-            <!----       <h2>Organisez votre<br><strong>voyage sur mesure</strong></h2>
-                        <a href="#" class="button-1">Par ici</a>  ---->
+                    
 		</div>
         </section>
         
