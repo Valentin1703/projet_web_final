@@ -4,7 +4,7 @@
 
 
 
-//si aucun id de gâteau dans l'url
+//si aucun id d'ordinateur se trouve dans l'url
 if (!isset($_GET['id']) && !isset($_SESSION['id_commande'])) {
     ?>
     <p class="txtRouge">Pour commander, choisissez 

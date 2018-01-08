@@ -4,7 +4,7 @@
 
 $info = new InfoClientDB($cnx);
 $texte = $info->getInfoClient("accueil");
-$id=1;
+$id=2;
 $id2=4;
 $i=0;
 /* pc 1 vente flash */
@@ -73,7 +73,7 @@ $nbrOrdi2 = count($liste2);
                                     <?php print ($liste[$i]['prix_unitaire']);?> euro 
                              
                             </p>
-                            <a href="#" class="button-2">Plus d'infos</a>
+                            <a href="index.php?page=commande&id=<?php print $liste[$i]['id_ordinateur']; ?>"class="button-2">Plus d'infos</a>
                         </div>
                 </article>
 
@@ -98,7 +98,7 @@ $nbrOrdi2 = count($liste2);
                                     <?php print ($liste2[$i]['prix_unitaire']);?> euro 
                              
                             </p>
-                            <a href="#" class="button-2">Plus d'infos</a>
+                               <a href="index.php?page=commande&id=<?php print $liste2[$i]['id_ordinateur']; ?>"class="button-2">Plus d'infos</a>
                         </div>
                     </article>
     
